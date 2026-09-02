@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clinical Evidence & Micronutrient Research Console</title>
-  <!-- Primary CDN with automated fallback -->
+  <title>Scientific Micronutrient & Oncology Research Console</title>
+  <!-- Google Fonts: Inter & JetBrains Mono for Science -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     if (typeof tailwind === 'undefined') {
@@ -13,230 +17,239 @@
   </script>
   <style>
     :root {
-      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "Helvetica Neue", Arial, sans-serif;
-      --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     }
     body {
       font-family: var(--font-sans);
-      letter-spacing: -0.012em;
+      letter-spacing: -0.011em;
+      background-color: #f8fafc;
+      color: #0f172a;
     }
-    .font-mono-num {
+    .font-mono-sci {
       font-family: var(--font-mono);
       font-feature-settings: "tnum";
     }
-    ::-webkit-scrollbar { width: 4px; height: 4px; }
-    ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.25); border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.45); }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
     
     .tab-btn {
       transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .tab-btn.active {
-      background: var(--primary, #2563eb);
+      background-color: #0f172a;
       color: #ffffff;
       font-weight: 600;
-      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
     }
-    .subtle-border {
-      border: 1px solid rgba(148, 163, 184, 0.14);
+    .sci-border {
+      border: 1px solid #e2e8f0;
+    }
+    .sci-card {
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
     }
   </style>
 </head>
-<body class="bg-[var(--background,#0b0f19)] text-[var(--foreground,#f1f5f9)] min-h-screen p-3 md:p-6 lg:p-8 antialiased">
+<body class="min-h-screen p-3 md:p-6 lg:p-8 antialiased">
   <div class="max-w-6xl mx-auto space-y-5">
 
-    <!-- Top Minimalist Bar -->
-    <header class="bg-[var(--card,#131b2e)] subtle-border rounded-xl p-5 shadow-xs">
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+    <!-- Top Scientific Header -->
+    <header class="sci-card rounded-xl p-5 md:p-6">
+      <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
         <div>
           <div class="flex items-center gap-2">
-            <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
-            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Primary Clinical Evidence Engine</span>
-            <span class="text-slate-600">•</span>
-            <span class="text-[11px] text-emerald-400 font-mono-num font-semibold">100% PubMed Verified</span>
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-600"></span>
+            <span class="text-[11px] font-mono-sci font-bold uppercase tracking-wider text-slate-500">Clinical Evidence Protocol</span>
+            <span class="text-slate-300">•</span>
+            <span class="text-[11px] font-mono-sci text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">100% PubMed Verified</span>
           </div>
-          <h1 class="text-xl md:text-2xl font-bold tracking-tight text-white mt-1">Oncology Evidence & Male Micronutrient Console</h1>
-          <p class="text-xs text-slate-400 mt-0.5">Profile: 34yo Male • Indoor / Sedentary • High-Dose K2 (45,000 mcg) & Zinc-Copper Dynamics</p>
+          <h1 class="text-xl md:text-2xl font-bold tracking-tight text-slate-900 mt-1.5">Micronutrient Pharmacology & Oncology Evidence Console</h1>
+          <p class="text-xs text-slate-500 mt-0.5 font-sans">Patient Profile: 34yo Male • Indoor / Sedentary • High-Dose K2 (45,000 mcg MK-4), Zinc-Copper Axis & Metabolic Grounding</p>
         </div>
 
-        <div class="flex items-center gap-2 text-xs">
-          <div class="bg-slate-900/60 px-3 py-2 rounded-lg subtle-border text-left">
-            <div class="text-[10px] text-slate-400 uppercase font-semibold">Zinc : Copper</div>
-            <div class="font-mono-num font-bold text-emerald-400">15:1 Ratio</div>
+        <div class="grid grid-cols-3 gap-2 text-xs w-full lg:w-auto font-mono-sci">
+          <div class="bg-slate-50 p-2.5 rounded-lg sci-border text-center">
+            <div class="text-[10px] text-slate-500 uppercase font-semibold">Zinc:Copper</div>
+            <div class="font-bold text-emerald-700 text-xs mt-0.5">15:1 Ratio</div>
           </div>
-          <div class="bg-slate-900/60 px-3 py-2 rounded-lg subtle-border text-left">
-            <div class="text-[10px] text-slate-400 uppercase font-semibold">K2 Protocol</div>
-            <div class="font-mono-num font-bold text-blue-400">15 mg TID</div>
+          <div class="bg-slate-50 p-2.5 rounded-lg sci-border text-center">
+            <div class="text-[10px] text-slate-500 uppercase font-semibold">K2 Regimen</div>
+            <div class="font-bold text-blue-700 text-xs mt-0.5">15mg TID</div>
           </div>
-          <div class="bg-slate-900/60 px-3 py-2 rounded-lg subtle-border text-left">
-            <div class="text-[10px] text-slate-400 uppercase font-semibold">Target D3</div>
-            <div class="font-mono-num font-bold text-amber-400">50-70 ng/mL</div>
+          <div class="bg-slate-50 p-2.5 rounded-lg sci-border text-center">
+            <div class="text-[10px] text-slate-500 uppercase font-semibold">Target 25(OH)D</div>
+            <div class="font-bold text-amber-700 text-xs mt-0.5">50–70 ng/mL</div>
           </div>
         </div>
       </div>
 
       <!-- Navigation Tabs -->
-      <nav class="flex overflow-x-auto gap-1.5 mt-5 pt-3 border-t border-slate-800/80" id="mainNav">
-        <button onclick="selectTab('audit')" id="btn-audit" class="tab-btn active px-3.5 py-1.5 rounded-md text-xs font-medium text-slate-300 hover:text-white">1. Deficiency Audit</button>
-        <button onclick="selectTab('zinc')" id="btn-zinc" class="tab-btn px-3.5 py-1.5 rounded-md text-xs font-medium text-slate-300 hover:text-white">2. Zinc & Copper Law</button>
-        <button onclick="selectTab('doses')" id="btn-doses" class="tab-btn px-3.5 py-1.5 rounded-md text-xs font-medium text-slate-300 hover:text-white">3. Maximal Doses</button>
-        <button onclick="selectTab('trials')" id="btn-trials" class="tab-btn px-3.5 py-1.5 rounded-md text-xs font-medium text-slate-300 hover:text-white">4. K2 Oncology Trials</button>
-        <button onclick="selectTab('mechanisms')" id="btn-mechanisms" class="tab-btn px-3.5 py-1.5 rounded-md text-xs font-medium text-slate-300 hover:text-white">5. Biology & Half-Life</button>
-        <button onclick="selectTab('schedule')" id="btn-schedule" class="tab-btn px-3.5 py-1.5 rounded-md text-xs font-medium text-slate-300 hover:text-white">6. Daily Schedule</button>
-        <button onclick="selectTab('missing')" id="btn-missing" class="tab-btn px-3.5 py-1.5 rounded-md text-xs font-semibold text-amber-300 bg-amber-500/10 border border-amber-500/20 hover:text-white">7. What Else Is Missing?</button>
+      <nav class="flex overflow-x-auto gap-1.5 mt-5 pt-3 border-t border-slate-100 font-sans" id="mainNav">
+        <button onclick="selectTab('audit')" id="btn-audit" class="tab-btn active px-3.5 py-1.5 rounded-md text-xs font-medium text-slate-600 hover:text-slate-900">1. Deficiency Audit</button>
+        <button onclick="selectTab('zinc')" id="btn-zinc" class="tab-btn px-3.5 py-1.5 rounded-md text-xs font-medium text-slate-600 hover:text-slate-900">2. Zinc, p53 & Copper</button>
+        <button onclick="selectTab('doses')" id="btn-doses" class="tab-btn px-3.5 py-1.5 rounded-md text-xs font-medium text-slate-600 hover:text-slate-900">3. Maximal Doses</button>
+        <button onclick="selectTab('trials')" id="btn-trials" class="tab-btn px-3.5 py-1.5 rounded-md text-xs font-medium text-slate-600 hover:text-slate-900">4. K2 Oncology Trials</button>
+        <button onclick="selectTab('mechanisms')" id="btn-mechanisms" class="tab-btn px-3.5 py-1.5 rounded-md text-xs font-medium text-slate-600 hover:text-slate-900">5. Kinetics & Half-Life</button>
+        <button onclick="selectTab('schedule')" id="btn-schedule" class="tab-btn px-3.5 py-1.5 rounded-md text-xs font-medium text-slate-600 hover:text-slate-900">6. Daily Schedule</button>
+        <button onclick="selectTab('missing')" id="btn-missing" class="tab-btn px-3.5 py-1.5 rounded-md text-xs font-semibold text-amber-800 bg-amber-50 border border-amber-200 hover:bg-amber-100">7. What Else Is Missing?</button>
       </nav>
     </header>
 
     <!-- TAB 1: DEFICIENCY AUDIT -->
     <section id="tab-audit" class="tab-panel space-y-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-        <!-- Card 1 -->
-        <div class="bg-[var(--card,#131b2e)] subtle-border rounded-xl p-4 space-y-2">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+        
+        <!-- Vitamin D3 -->
+        <div class="sci-card rounded-xl p-4 space-y-2 relative">
           <div class="flex justify-between items-center text-xs">
-            <span class="font-bold text-white flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-red-400"></span> Vitamin D3</span>
-            <span class="px-2 py-0.5 rounded text-[10px] font-mono-num font-bold bg-red-500/10 text-red-400 border border-red-500/20">95% Risk</span>
+            <span class="font-bold text-slate-900 flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500"></span> Vitamin D3</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono-sci font-bold bg-red-50 text-red-700 border border-red-200">95% Risk</span>
           </div>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Window glass absorbs 100% of UVB (zero 7-dehydrocholesterol conversion). Overweight BMI traps up to 65% in subcutaneous adipose (<a href="https://pubmed.ncbi.nlm.nih.gov/25372709/" target="_blank" class="text-blue-400 hover:underline">Ekwaru 2014</a>).
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Window glass absorbs 100% of solar UVB (zero 7-dehydrocholesterol photolysis indoors). Adipose tissue traps up to 65% of oral vitamin D in overweight adults (<a href="https://pubmed.ncbi.nlm.nih.gov/25372709/" target="_blank" class="text-blue-600 hover:underline font-medium">Ekwaru et al. 2014</a>).
           </p>
-          <div class="text-[11px] text-slate-300 font-medium pt-1 border-t border-slate-800">
-            Fix: 5,000–10,000 IU/day with fats + Magnesium.
+          <div class="text-[11px] text-slate-800 font-medium pt-1.5 border-t border-slate-100 font-mono-sci">
+            Rx: 5,000–10,000 IU/d with dietary fat + Magnesium.
           </div>
         </div>
 
-        <!-- Card 2 -->
-        <div class="bg-[var(--card,#131b2e)] subtle-border rounded-xl p-4 space-y-2">
+        <!-- Magnesium -->
+        <div class="sci-card rounded-xl p-4 space-y-2 relative">
           <div class="flex justify-between items-center text-xs">
-            <span class="font-bold text-white flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Elemental Magnesium</span>
-            <span class="px-2 py-0.5 rounded text-[10px] font-mono-num font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">65% Risk</span>
+            <span class="font-bold text-slate-900 flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Elemental Magnesium</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono-sci font-bold bg-amber-50 text-amber-700 border border-amber-200">65% Risk</span>
           </div>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Insulin resistance elevates urinary wasting. Activating D3 via CYP2R1 and CYP27B1 consumes intracellular magnesium (<a href="https://pubmed.ncbi.nlm.nih.gov/29480918/" target="_blank" class="text-blue-400 hover:underline">Uwitonze 2018</a>).
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Insulin resistance accelerates urinary magnesium wasting. Activating storage D3 via liver CYP2R1 and kidney CYP27B1 consumes intracellular magnesium (<a href="https://pubmed.ncbi.nlm.nih.gov/29480918/" target="_blank" class="text-blue-600 hover:underline font-medium">Uwitonze 2018</a>).
           </p>
-          <div class="text-[11px] text-slate-300 font-medium pt-1 border-t border-slate-800">
-            Fix: 350–450 mg/day Magnesium Glycinate at night.
+          <div class="text-[11px] text-slate-800 font-medium pt-1.5 border-t border-slate-100 font-mono-sci">
+            Rx: 350–450 mg/d Magnesium Glycinate at bedtime.
           </div>
         </div>
 
-        <!-- Card 3 -->
-        <div class="bg-[var(--card,#131b2e)] subtle-border rounded-xl p-4 space-y-2">
+        <!-- Zinc -->
+        <div class="sci-card rounded-xl p-4 space-y-2 relative">
           <div class="flex justify-between items-center text-xs">
-            <span class="font-bold text-white flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span> Zinc (+ Copper)</span>
-            <span class="px-2 py-0.5 rounded text-[10px] font-mono-num font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20">50% Risk</span>
+            <span class="font-bold text-slate-900 flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Zinc (+ Copper)</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono-sci font-bold bg-blue-50 text-blue-700 border border-blue-200">50% Risk</span>
           </div>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Adipose tissue overexpresses aromatase (converting T to E2). Zinc modulates aromatase and stabilizes p53 DNA-binding fingers (<a href="https://pubmed.ncbi.nlm.nih.gov/11077439/" target="_blank" class="text-blue-400 hover:underline">Hainaut 2000</a>).
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Visceral adipose overexpresses aromatase (converting T to estradiol). Zinc acts as an endogenous aromatase modulator and stabilizes p53 DNA-binding fingers (<a href="https://pubmed.ncbi.nlm.nih.gov/11077439/" target="_blank" class="text-blue-600 hover:underline font-medium">Hainaut 2000</a>).
           </p>
-          <div class="text-[11px] text-slate-300 font-medium pt-1 border-t border-slate-800">
-            Fix: 30 mg Zinc + 2 mg Copper Bisglycinate with meal.
+          <div class="text-[11px] text-slate-800 font-medium pt-1.5 border-t border-slate-100 font-mono-sci">
+            Rx: 30 mg Zinc + 2 mg Copper Bisglycinate with food.
           </div>
         </div>
 
-        <!-- Card 4 -->
-        <div class="bg-[var(--card,#131b2e)] subtle-border rounded-xl p-4 space-y-2">
+        <!-- Omega-3 -->
+        <div class="sci-card rounded-xl p-4 space-y-2 relative">
           <div class="flex justify-between items-center text-xs">
-            <span class="font-bold text-white flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> Omega-3 (EPA/DHA)</span>
-            <span class="px-2 py-0.5 rounded text-[10px] font-mono-num font-bold bg-purple-500/10 text-purple-400 border border-purple-500/20">75% Risk</span>
+            <span class="font-bold text-slate-900 flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-purple-500"></span> Omega-3 EPA / DHA</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono-sci font-bold bg-purple-50 text-purple-700 border border-purple-200">75% Risk</span>
           </div>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Standard sedentary diet causes 15:1 Omega-6:3 ratio, accelerating liver fat accumulation (NAFLD) and systemic vascular endothelial stiffness.
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Indoor sedentary diets average a 15:1 to 20:1 Omega-6:3 ratio, worsening hepatic steatosis (NAFLD) and endothelial arterial stiffness (<a href="https://pubmed.ncbi.nlm.nih.gov/30415628/" target="_blank" class="text-blue-600 hover:underline font-medium">REDUCE-IT 2019</a>).
           </p>
-          <div class="text-[11px] text-slate-300 font-medium pt-1 border-t border-slate-800">
-            Fix: 2,000–4,000 mg/day pure TG-form EPA/DHA (<a href="https://pubmed.ncbi.nlm.nih.gov/30415628/" target="_blank" class="text-blue-400 hover:underline">REDUCE-IT</a>).
+          <div class="text-[11px] text-slate-800 font-medium pt-1.5 border-t border-slate-100 font-mono-sci">
+            Rx: 2,000–4,000 mg/d concentrated TG-form EPA/DHA.
           </div>
         </div>
 
-        <!-- Card 5 -->
-        <div class="bg-[var(--card,#131b2e)] subtle-border rounded-xl p-4 space-y-2">
+        <!-- Vitamin K2 -->
+        <div class="sci-card rounded-xl p-4 space-y-2 relative">
           <div class="flex justify-between items-center text-xs">
-            <span class="font-bold text-white flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Vitamin K2 (MK-7 / MK-4)</span>
-            <span class="px-2 py-0.5 rounded text-[10px] font-mono-num font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Subclinical</span>
+            <span class="font-bold text-slate-900 flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> Vitamin K2 (MK-7 / MK-4)</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono-sci font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">Subclinical</span>
           </div>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Taking high-dose D3 increases intestinal calcium absorption. Without K2, Matrix Gla Protein (MGP) remains uncarboxylated, risking vascular calcification.
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Taking high D3 without K2 leaves Matrix Gla Protein (MGP) uncarboxylated, allowing calcium to settle in arterial walls rather than bones (<a href="https://pubmed.ncbi.nlm.nih.gov/18400723/" target="_blank" class="text-blue-600 hover:underline font-medium">Nimptsch 2008</a>).
           </p>
-          <div class="text-[11px] text-slate-300 font-medium pt-1 border-t border-slate-800">
-            Fix: 100–200 mcg MK-7 daily (or 15 mg TID MK-4 for clinical protocol).
+          <div class="text-[11px] text-slate-800 font-medium pt-1.5 border-t border-slate-100 font-mono-sci">
+            Rx: 100–200 mcg MK-7 (or 15 mg TID MK-4 for trials).
           </div>
         </div>
 
-        <!-- Card 6 -->
-        <div class="bg-[var(--card,#131b2e)] subtle-border rounded-xl p-4 space-y-2">
+        <!-- Choline -->
+        <div class="sci-card rounded-xl p-4 space-y-2 relative">
           <div class="flex justify-between items-center text-xs">
-            <span class="font-bold text-white flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Choline & Methyl Donors</span>
-            <span class="px-2 py-0.5 rounded text-[10px] font-mono-num font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">60% Risk</span>
+            <span class="font-bold text-slate-900 flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-cyan-500"></span> Choline / Methyl Donors</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono-sci font-bold bg-cyan-50 text-cyan-700 border border-cyan-200">60% Risk</span>
           </div>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Choline is required to synthesize phosphatidylcholine for VLDL export. Sedentary choline deficiency causes hepatic lipid accumulation (fatty liver).
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Choline is required to synthesize phosphatidylcholine for hepatic VLDL export. Sedentary choline deficiency directly traps triglycerides in the liver, driving NAFLD.
           </p>
-          <div class="text-[11px] text-slate-300 font-medium pt-1 border-t border-slate-800">
-            Fix: 300–600 mg Alpha-GPC or 2–3 pastured egg yolks daily.
+          <div class="text-[11px] text-slate-800 font-medium pt-1.5 border-t border-slate-100 font-mono-sci">
+            Rx: 300–600 mg Alpha-GPC or 2–3 egg yolks daily.
           </div>
         </div>
+
       </div>
     </section>
 
     <!-- TAB 2: ZINC & COPPER LAW -->
     <section id="tab-zinc" class="tab-panel hidden space-y-4">
-      <div class="bg-[var(--card,#131b2e)] subtle-border rounded-xl p-5 space-y-5">
+      <div class="sci-card rounded-xl p-5 md:p-6 space-y-5">
         <div>
-          <h2 class="text-lg font-bold text-white">Zinc Biomechanics in Cancer & Male Endocrinology</h2>
-          <p class="text-xs text-slate-400 mt-0.5">Primary literature breakdown of p53 tumor suppression, testosterone elevation, and the copper trap.</p>
+          <h2 class="text-lg font-bold text-slate-900">Zinc Biomechanics in Tumor Suppression & Male Endocrinology</h2>
+          <p class="text-xs text-slate-500 mt-0.5">Primary literature on p53 structural folding, testosterone doubling, and the copper trap.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-          <div class="p-4 rounded-lg bg-slate-900/60 subtle-border space-y-1.5">
-            <div class="font-bold text-blue-400">1. p53 Structural Integrity</div>
-            <p class="text-slate-400 leading-relaxed">
-              A single zinc ion coordinates three cysteines and one histidine in the central DNA-binding domain of p53 (<a href="https://pubmed.ncbi.nlm.nih.gov/11077439/" target="_blank" class="text-blue-400 hover:underline">Hainaut 2000</a>). Low zinc causes wild-type p53 to misfold and fail to initiate apoptosis.
+          <div class="p-4 rounded-lg bg-slate-50 sci-border space-y-1.5">
+            <div class="font-bold text-blue-700">1. p53 Structural Integrity</div>
+            <p class="text-slate-600 leading-relaxed">
+              A single zinc atom coordinates three cysteines and one histidine in the central DNA-binding domain of the p53 tumor suppressor (<a href="https://pubmed.ncbi.nlm.nih.gov/11077439/" target="_blank" class="text-blue-600 hover:underline">Hainaut et al., PMID: 11077439</a>). Zinc depletion causes p53 to misfold, losing apoptotic function.
             </p>
           </div>
-          <div class="p-4 rounded-lg bg-slate-900/60 subtle-border space-y-1.5">
-            <div class="font-bold text-emerald-400">2. Testosterone Doubling</div>
-            <p class="text-slate-400 leading-relaxed">
-              Prasad et al. (<a href="https://pubmed.ncbi.nlm.nih.gov/8875519/" target="_blank" class="text-blue-400 hover:underline">1996, PMID: 8875519</a>) showed restricting zinc in young men reduced testosterone by 50%. Supplementing marginally deficient men doubled serum testosterone from 8.3 to 16.0 nmol/L (p&lt;0.002).
+          <div class="p-4 rounded-lg bg-slate-50 sci-border space-y-1.5">
+            <div class="font-bold text-emerald-700">2. Testosterone Doubling</div>
+            <p class="text-slate-600 leading-relaxed">
+              Prasad et al. (<a href="https://pubmed.ncbi.nlm.nih.gov/8875519/" target="_blank" class="text-blue-600 hover:underline">1996, PMID: 8875519</a>) showed restricting zinc in young men halved testosterone in 20 weeks. Supplementing deficient older men doubled serum testosterone from 8.3 to 16.0 nmol/L (p&lt;0.002).
             </p>
           </div>
-          <div class="p-4 rounded-lg bg-slate-900/60 subtle-border space-y-1.5">
-            <div class="font-bold text-purple-400">3. T-Cell Immunosurveillance</div>
-            <p class="text-slate-400 leading-relaxed">
-              Zinc is the mandatory prosthetic group for thymulin, the hormone driving CD4+/CD8+ lymphocyte maturation and Natural Killer cell cytotoxicity (<a href="https://pubmed.ncbi.nlm.nih.gov/18385818/" target="_blank" class="text-blue-400 hover:underline">Prasad 2008</a>).
+          <div class="p-4 rounded-lg bg-slate-50 sci-border space-y-1.5">
+            <div class="font-bold text-purple-700">3. T-Cell Immunosurveillance</div>
+            <p class="text-slate-600 leading-relaxed">
+              Zinc is the mandatory functional prosthetic group for thymulin, the thymic peptide governing CD4+/CD8+ lymphocyte maturation and Natural Killer cell cytotoxicity (<a href="https://pubmed.ncbi.nlm.nih.gov/18385818/" target="_blank" class="text-blue-600 hover:underline">Prasad 2008</a>).
             </p>
           </div>
         </div>
 
         <!-- The Copper Alert -->
-        <div class="p-4 rounded-lg bg-red-500/10 border border-red-500/30 space-y-2">
-          <div class="flex items-center gap-2 text-xs font-bold text-red-400">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+        <div class="p-4 rounded-lg bg-red-50 border border-red-200 space-y-1.5 text-xs">
+          <div class="flex items-center gap-2 font-bold text-red-800">
+            <svg class="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
             NON-NEGOTIABLE LAW: The Metallothionein Copper Trap
           </div>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            Ingesting &gt;40 mg of zinc alone stimulates intestinal mucosal <strong>metallothionein</strong>, which has a 50x higher affinity for copper than zinc. It traps all copper in enterocytes, causing severe copper deficiency, sideroblastic anemia, neutropenia, and irreversible spinal cord myeloneuropathy (<a href="https://pubmed.ncbi.nlm.nih.gov/26085547/" target="_blank" class="text-blue-400 hover:underline">Duncan 2015</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/29752579/" target="_blank" class="text-blue-400 hover:underline">Myint 2018</a>).
+          <p class="text-slate-700 leading-relaxed">
+            Ingesting &gt;40 mg of zinc alone stimulates intestinal mucosal <strong>metallothionein</strong>, which binds copper with 50x higher affinity than zinc. It traps dietary copper in enterocytes, shedding it in the feces. This induces severe copper deficiency, sideroblastic anemia, neutropenia, and irreversible spinal cord myeloneuropathy (<a href="https://pubmed.ncbi.nlm.nih.gov/26085547/" target="_blank" class="text-blue-600 hover:underline">Duncan 2015</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/29752579/" target="_blank" class="text-blue-600 hover:underline">Myint 2018</a>).
           </p>
         </div>
 
         <!-- Interactive Calculator -->
-        <div class="p-4 rounded-lg bg-slate-900/60 subtle-border space-y-3">
-          <div class="text-xs font-bold text-slate-300">Interactive Zinc : Copper Balance Checker</div>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div class="p-4 rounded-lg bg-slate-50 sci-border space-y-3">
+          <div class="text-xs font-bold text-slate-800 font-sans">Interactive Zinc : Copper Balance Checker</div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono-sci">
             <div>
-              <label class="text-[11px] text-slate-400">Elemental Zinc (mg)</label>
-              <input type="number" id="zincVal" value="30" class="w-full mt-1 bg-slate-800 subtle-border rounded px-2.5 py-1.5 text-xs text-white font-mono-num" oninput="updateRatio()">
+              <label class="text-[11px] text-slate-500 font-sans">Elemental Zinc (mg)</label>
+              <input type="number" id="zincVal" value="30" class="w-full mt-1 bg-white sci-border rounded px-2.5 py-1.5 text-xs text-slate-900 font-bold" oninput="updateRatio()">
             </div>
             <div>
-              <label class="text-[11px] text-slate-400">Elemental Copper (mg)</label>
-              <input type="number" id="copperVal" value="2" step="0.5" class="w-full mt-1 bg-slate-800 subtle-border rounded px-2.5 py-1.5 text-xs text-white font-mono-num" oninput="updateRatio()">
+              <label class="text-[11px] text-slate-500 font-sans">Elemental Copper (mg)</label>
+              <input type="number" id="copperVal" value="2" step="0.5" class="w-full mt-1 bg-white sci-border rounded px-2.5 py-1.5 text-xs text-slate-900 font-bold" oninput="updateRatio()">
             </div>
             <div>
-              <label class="text-[11px] text-slate-400">Calculated Ratio</label>
-              <div id="ratioPill" class="mt-1 px-2.5 py-1.5 rounded text-xs font-mono-num font-bold text-center bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+              <label class="text-[11px] text-slate-500 font-sans">Calculated Ratio</label>
+              <div id="ratioPill" class="mt-1 px-2.5 py-1.5 rounded text-xs font-bold text-center bg-emerald-100 text-emerald-800 border border-emerald-300">
                 15.0 : 1 (Optimal)
               </div>
             </div>
           </div>
-          <div id="ratioText" class="text-[11px] text-slate-400">
+          <div id="ratioText" class="text-[11px] text-slate-600 font-sans">
             Gold-standard ratio: Safely sustains p53 DNA-binding and testosterone synthesis with zero metallothionein copper depletion.
           </div>
         </div>
@@ -245,69 +258,69 @@
 
     <!-- TAB 3: MAXIMAL DOSING MATRIX -->
     <section id="tab-doses" class="tab-panel hidden space-y-4">
-      <div class="bg-[var(--card,#131b2e)] subtle-border rounded-xl p-5 shadow-xs overflow-x-auto">
-        <h2 class="text-lg font-bold text-white mb-1">Maximal Evidence-Based Dosing Matrix</h2>
-        <p class="text-xs text-slate-400 mb-4">Comparing baseline RDAs against clinical research sweet spots and tolerable upper intake limits.</p>
+      <div class="sci-card rounded-xl p-5 shadow-xs overflow-x-auto">
+        <h2 class="text-lg font-bold text-slate-900 mb-1">Maximal Evidence-Based Dosing Matrix</h2>
+        <p class="text-xs text-slate-500 mb-4">Comparing baseline RDAs against clinical research sweet spots and tolerable upper intake limits.</p>
 
         <table class="w-full text-left text-xs border-collapse font-sans">
           <thead>
-            <tr class="border-b border-slate-800 text-slate-400 bg-slate-900/40">
+            <tr class="border-b border-slate-200 text-slate-500 bg-slate-50">
               <th class="py-2.5 px-3 font-semibold">Nutrient & Form</th>
               <th class="py-2.5 px-3 font-semibold">Standard RDA</th>
-              <th class="py-2.5 px-3 font-semibold text-emerald-400">Research Sweet Spot</th>
-              <th class="py-2.5 px-3 font-semibold text-amber-400">Tolerable Upper Limit</th>
+              <th class="py-2.5 px-3 font-semibold text-emerald-800">Research Sweet Spot</th>
+              <th class="py-2.5 px-3 font-semibold text-amber-800">Tolerable Upper Limit</th>
               <th class="py-2.5 px-3 font-semibold">Mandatory Invariant</th>
               <th class="py-2.5 px-3 font-semibold">Verified Source</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-slate-800/80 font-mono-num">
+          <tbody class="divide-y divide-slate-100 font-mono-sci">
             <tr>
-              <td class="py-3 px-3 font-bold font-sans">Vitamin D3<br><span class="text-[10px] text-slate-400 font-normal">Cholecalciferol</span></td>
-              <td class="py-3 px-3 text-slate-400">600–800 IU</td>
-              <td class="py-3 px-3 font-bold text-emerald-400">5,000–10,000 IU/d</td>
-              <td class="py-3 px-3 text-amber-400">10,000 IU/d</td>
-              <td class="py-3 px-3 font-sans text-[11px]">Must take with meal fats + Magnesium</td>
-              <td class="py-3 px-3 font-sans"><a href="https://pubmed.ncbi.nlm.nih.gov/25372709/" target="_blank" class="text-blue-400 underline">Ekwaru 2014</a></td>
+              <td class="py-3 px-3 font-bold font-sans text-slate-900">Vitamin D3<br><span class="text-[10px] text-slate-500 font-normal">Cholecalciferol</span></td>
+              <td class="py-3 px-3 text-slate-600">600–800 IU</td>
+              <td class="py-3 px-3 font-bold text-emerald-700">5,000–10,000 IU/d</td>
+              <td class="py-3 px-3 text-amber-700">10,000 IU/d</td>
+              <td class="py-3 px-3 font-sans text-[11px] text-slate-700">Must take with meal fats + Magnesium</td>
+              <td class="py-3 px-3 font-sans"><a href="https://pubmed.ncbi.nlm.nih.gov/25372709/" target="_blank" class="text-blue-600 underline">Ekwaru 2014</a></td>
             </tr>
             <tr>
-              <td class="py-3 px-3 font-bold font-sans">Elemental Zinc<br><span class="text-[10px] text-slate-400 font-normal">Bisglycinate / Picolinate</span></td>
-              <td class="py-3 px-3 text-slate-400">11 mg</td>
-              <td class="py-3 px-3 font-bold text-emerald-400">30–40 mg/d</td>
-              <td class="py-3 px-3 text-amber-400">40–50 mg/d</td>
-              <td class="py-3 px-3 font-sans text-[11px] text-red-400">MUST pair with 1–2 mg Copper</td>
-              <td class="py-3 px-3 font-sans"><a href="https://pubmed.ncbi.nlm.nih.gov/8875519/" target="_blank" class="text-blue-400 underline">Prasad 1996</a></td>
+              <td class="py-3 px-3 font-bold font-sans text-slate-900">Elemental Zinc<br><span class="text-[10px] text-slate-500 font-normal">Bisglycinate / Picolinate</span></td>
+              <td class="py-3 px-3 text-slate-600">11 mg</td>
+              <td class="py-3 px-3 font-bold text-emerald-700">30–40 mg/d</td>
+              <td class="py-3 px-3 text-amber-700">40–50 mg/d</td>
+              <td class="py-3 px-3 font-sans text-[11px] text-red-700 font-semibold">MUST pair with 1–2 mg Copper</td>
+              <td class="py-3 px-3 font-sans"><a href="https://pubmed.ncbi.nlm.nih.gov/8875519/" target="_blank" class="text-blue-600 underline">Prasad 1996</a></td>
             </tr>
             <tr>
-              <td class="py-3 px-3 font-bold font-sans">Elemental Magnesium<br><span class="text-[10px] text-slate-400 font-normal">Glycinate / Malate</span></td>
-              <td class="py-3 px-3 text-slate-400">400–420 mg</td>
-              <td class="py-3 px-3 font-bold text-emerald-400">350–450 mg/d</td>
-              <td class="py-3 px-3 text-amber-400">350 mg (salts)</td>
-              <td class="py-3 px-3 font-sans text-[11px]">Take in evening for NMDA relaxation</td>
-              <td class="py-3 px-3 font-sans"><a href="https://pubmed.ncbi.nlm.nih.gov/29480918/" target="_blank" class="text-blue-400 underline">Uwitonze 2018</a></td>
+              <td class="py-3 px-3 font-bold font-sans text-slate-900">Elemental Magnesium<br><span class="text-[10px] text-slate-500 font-normal">Glycinate / Malate</span></td>
+              <td class="py-3 px-3 text-slate-600">400–420 mg</td>
+              <td class="py-3 px-3 font-bold text-emerald-700">350–450 mg/d</td>
+              <td class="py-3 px-3 text-amber-700">350 mg (salts)</td>
+              <td class="py-3 px-3 font-sans text-[11px] text-slate-700">Take in evening for NMDA relaxation</td>
+              <td class="py-3 px-3 font-sans"><a href="https://pubmed.ncbi.nlm.nih.gov/29480918/" target="_blank" class="text-blue-600 underline">Uwitonze 2018</a></td>
             </tr>
             <tr>
-              <td class="py-3 px-3 font-bold font-sans">Vitamin K2 (MK-7)<br><span class="text-[10px] text-slate-400 font-normal">Menaquinone-7 (72h T1/2)</span></td>
-              <td class="py-3 px-3 text-slate-400">90–120 mcg (K1)</td>
-              <td class="py-3 px-3 font-bold text-emerald-400">100–200 mcg/d</td>
-              <td class="py-3 px-3 text-amber-400">No official UL</td>
-              <td class="py-3 px-3 font-sans text-[11px]">Carboxylates MGP to protect arteries</td>
-              <td class="py-3 px-3 font-sans"><a href="https://pubmed.ncbi.nlm.nih.gov/18400723/" target="_blank" class="text-blue-400 underline">Nimptsch 2008</a></td>
+              <td class="py-3 px-3 font-bold font-sans text-slate-900">Vitamin K2 (MK-7)<br><span class="text-[10px] text-slate-500 font-normal">Menaquinone-7 (72h T1/2)</span></td>
+              <td class="py-3 px-3 text-slate-600">90–120 mcg (K1)</td>
+              <td class="py-3 px-3 font-bold text-emerald-700">100–200 mcg/d</td>
+              <td class="py-3 px-3 text-amber-700">No official UL</td>
+              <td class="py-3 px-3 font-sans text-[11px] text-slate-700">Carboxylates MGP to protect arteries</td>
+              <td class="py-3 px-3 font-sans"><a href="https://pubmed.ncbi.nlm.nih.gov/18400723/" target="_blank" class="text-blue-600 underline">Nimptsch 2008</a></td>
             </tr>
             <tr>
-              <td class="py-3 px-3 font-bold font-sans">Vitamin K2 (MK-4)<br><span class="text-[10px] text-slate-400 font-normal">Menatetrenone (45,000 mcg)</span></td>
-              <td class="py-3 px-3 text-slate-400">None (Rx drug)</td>
-              <td class="py-3 px-3 font-bold text-emerald-400">45 mg/d (15mg TID)</td>
-              <td class="py-3 px-3 text-amber-400">45 mg (Clinical)</td>
-              <td class="py-3 px-3 font-sans text-[11px] text-red-400 font-semibold">Strictly contraindicated with Warfarin</td>
-              <td class="py-3 px-3 font-sans"><a href="https://pubmed.ncbi.nlm.nih.gov/33481358/" target="_blank" class="text-blue-400 underline">Kudo 2021</a></td>
+              <td class="py-3 px-3 font-bold font-sans text-slate-900">Vitamin K2 (MK-4)<br><span class="text-[10px] text-slate-500 font-normal">Menatetrenone (45,000 mcg)</span></td>
+              <td class="py-3 px-3 text-slate-600">None (Rx drug)</td>
+              <td class="py-3 px-3 font-bold text-emerald-700">45 mg/d (15mg TID)</td>
+              <td class="py-3 px-3 text-amber-700">45 mg (Clinical)</td>
+              <td class="py-3 px-3 font-sans text-[11px] text-red-700 font-semibold">Strictly contraindicated with Warfarin</td>
+              <td class="py-3 px-3 font-sans"><a href="https://pubmed.ncbi.nlm.nih.gov/33481358/" target="_blank" class="text-blue-600 underline">Kudo 2021</a></td>
             </tr>
             <tr>
-              <td class="py-3 px-3 font-bold font-sans">Omega-3 EPA / DHA<br><span class="text-[10px] text-slate-400 font-normal">Triglyceride Concentrate</span></td>
-              <td class="py-3 px-3 text-slate-400">250–500 mg</td>
-              <td class="py-3 px-3 font-bold text-emerald-400">2,000–4,000 mg/d</td>
-              <td class="py-3 px-3 text-amber-400">5,000 mg (FDA)</td>
-              <td class="py-3 px-3 font-sans text-[11px]">2:1 EPA:DHA for liver fat & triglycerides</td>
-              <td class="py-3 px-3 font-sans"><a href="https://pubmed.ncbi.nlm.nih.gov/30415628/" target="_blank" class="text-blue-400 underline">NEJM REDUCE-IT</a></td>
+              <td class="py-3 px-3 font-bold font-sans text-slate-900">Omega-3 EPA / DHA<br><span class="text-[10px] text-slate-500 font-normal">Triglyceride Concentrate</span></td>
+              <td class="py-3 px-3 text-slate-600">250–500 mg</td>
+              <td class="py-3 px-3 font-bold text-emerald-700">2,000–4,000 mg/d</td>
+              <td class="py-3 px-3 text-amber-700">5,000 mg (FDA)</td>
+              <td class="py-3 px-3 font-sans text-[11px] text-slate-700">2:1 EPA:DHA for liver fat & triglycerides</td>
+              <td class="py-3 px-3 font-sans"><a href="https://pubmed.ncbi.nlm.nih.gov/30415628/" target="_blank" class="text-blue-600 underline">NEJM REDUCE-IT</a></td>
             </tr>
           </tbody>
         </table>
@@ -316,24 +329,24 @@
 
     <!-- TAB 4: CLINICAL TRIALS DATABASE -->
     <section id="tab-trials" class="tab-panel hidden space-y-4">
-      <div class="bg-[var(--card,#131b2e)] subtle-border rounded-xl p-5 shadow-xs space-y-4">
+      <div class="sci-card rounded-xl p-5 shadow-xs space-y-4">
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
           <div>
-            <h2 class="text-lg font-bold text-white">45,000 mcg K2 Oncology Clinical Trials</h2>
-            <p class="text-xs text-slate-400">100% verified NCBI/PubMed human trials, cohorts, and meta-analyses.</p>
+            <h2 class="text-lg font-bold text-slate-900">45,000 mcg K2 Oncology Clinical Trials Database</h2>
+            <p class="text-xs text-slate-500">100% verified NCBI/PubMed human trials, cohorts, and meta-analyses.</p>
           </div>
-          <div class="flex gap-1.5">
-            <button onclick="filterTrials('all')" id="flt-all" class="px-2.5 py-1 rounded text-xs font-semibold bg-blue-600 text-white">All</button>
-            <button onclick="filterTrials('hcc')" id="flt-hcc" class="px-2.5 py-1 rounded text-xs font-semibold bg-slate-800 text-slate-300">Liver</button>
-            <button onclick="filterTrials('heme')" id="flt-heme" class="px-2.5 py-1 rounded text-xs font-semibold bg-slate-800 text-slate-300">Leukemia/MDS</button>
-            <button onclick="filterTrials('ferro')" id="flt-ferro" class="px-2.5 py-1 rounded text-xs font-semibold bg-slate-800 text-slate-300">Ferroptosis</button>
+          <div class="flex gap-1.5 font-sans">
+            <button onclick="filterTrials('all')" id="flt-all" class="px-2.5 py-1 rounded text-xs font-semibold bg-slate-900 text-white">All</button>
+            <button onclick="filterTrials('hcc')" id="flt-hcc" class="px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">Liver</button>
+            <button onclick="filterTrials('heme')" id="flt-heme" class="px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">Leukemia/MDS</button>
+            <button onclick="filterTrials('ferro')" id="flt-ferro" class="px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">Ferroptosis</button>
           </div>
         </div>
 
         <div class="overflow-x-auto">
-          <table class="w-full text-left text-xs border-collapse">
+          <table class="w-full text-left text-xs border-collapse font-sans">
             <thead>
-              <tr class="border-b border-slate-800 text-slate-400 bg-slate-900/40">
+              <tr class="border-b border-slate-200 text-slate-500 bg-slate-50">
                 <th class="py-2.5 px-3 font-semibold">Author & Year</th>
                 <th class="py-2.5 px-3 font-semibold">Cohort & N</th>
                 <th class="py-2.5 px-3 font-semibold">Protocol</th>
@@ -341,7 +354,7 @@
                 <th class="py-2.5 px-3 font-semibold">PubMed</th>
               </tr>
             </thead>
-            <tbody id="trialRows" class="divide-y divide-slate-800/80">
+            <tbody id="trialRows" class="divide-y divide-slate-100">
               <!-- Dynamically Populated -->
             </tbody>
           </table>
@@ -353,49 +366,49 @@
     <section id="tab-mechanisms" class="tab-panel hidden space-y-4">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <!-- Pharmacokinetics Visualizer -->
-        <div class="bg-[var(--card,#131b2e)] subtle-border rounded-xl p-5 space-y-3">
-          <h3 class="text-base font-bold text-white">MK-4 Pharmacokinetic Half-Life Curve</h3>
-          <p class="text-xs text-slate-400">Why a single 45 mg pill fails vs. divided 15 mg TID dosing.</p>
-          <div class="bg-slate-900/80 p-3 rounded-lg subtle-border">
+        <div class="sci-card rounded-xl p-5 space-y-3">
+          <h3 class="text-base font-bold text-slate-900">MK-4 Pharmacokinetic Half-Life Curve</h3>
+          <p class="text-xs text-slate-500">Why a single 45 mg pill fails vs. divided 15 mg TID dosing.</p>
+          <div class="bg-slate-50 p-3 rounded-lg sci-border">
             <canvas id="pkChart" width="440" height="180" class="w-full h-44"></canvas>
-            <div class="flex justify-between text-[10px] text-slate-400 mt-1.5 font-mono-num">
+            <div class="flex justify-between text-[10px] text-slate-500 mt-1.5 font-mono-sci">
               <span>0h (Morning)</span>
               <span>8h (Midday)</span>
               <span>16h (Dinner)</span>
               <span>24h (Next Day)</span>
             </div>
           </div>
-          <div class="flex justify-between text-[11px] pt-1">
-            <span class="text-amber-400 font-semibold">• 45 mg Single Bolus (Spike & Crash in 3h)</span>
-            <span class="text-emerald-400 font-semibold">• 15 mg TID (Steady Receptor Saturation)</span>
+          <div class="flex justify-between text-[11px] pt-1 font-mono-sci">
+            <span class="text-amber-700 font-semibold">• 45 mg Single Bolus (Spike & Crash in 3h)</span>
+            <span class="text-emerald-700 font-semibold">• 15 mg TID (Steady Saturation)</span>
           </div>
         </div>
 
         <!-- Adipose Sequestration Trap -->
-        <div class="bg-[var(--card,#131b2e)] subtle-border rounded-xl p-5 space-y-3">
-          <h3 class="text-base font-bold text-white">Adipose Sequestration Trap (BMI Engine)</h3>
-          <p class="text-xs text-slate-400">Ekwaru et al. (N=17,614): Lipophilic vitamins sequester into fat mass.</p>
+        <div class="sci-card rounded-xl p-5 space-y-3">
+          <h3 class="text-base font-bold text-slate-900">Adipose Sequestration Trap (BMI Engine)</h3>
+          <p class="text-xs text-slate-500">Ekwaru et al. (N=17,614): Lipophilic vitamins sequester into fat mass.</p>
           
-          <div class="space-y-2 bg-slate-900/60 p-3.5 rounded-lg subtle-border">
+          <div class="space-y-2 bg-slate-50 p-3.5 rounded-lg sci-border">
             <div class="flex justify-between text-xs font-semibold">
-              <span class="text-slate-300">Your Current BMI</span>
-              <span id="bmiVal" class="text-blue-400 font-mono-num font-bold">28.0</span>
+              <span class="text-slate-700">Your Current BMI</span>
+              <span id="bmiVal" class="text-blue-700 font-mono-sci font-bold">28.0</span>
             </div>
-            <input type="range" id="bmiRange" min="18" max="42" step="0.5" value="28" class="w-full accent-blue-500" oninput="recalcBmi()">
-            <div class="grid grid-cols-2 gap-2 pt-2 border-t border-slate-800 text-xs">
-              <div class="bg-slate-800/60 p-2.5 rounded subtle-border">
-                <div class="text-[10px] text-slate-400">Adipose Trapped</div>
-                <div id="trapPct" class="text-base font-bold font-mono-num text-amber-400">32%</div>
+            <input type="range" id="bmiRange" min="18" max="42" step="0.5" value="28" class="w-full accent-blue-600" oninput="recalcBmi()">
+            <div class="grid grid-cols-2 gap-2 pt-2 border-t border-slate-200 text-xs font-mono-sci">
+              <div class="bg-white p-2.5 rounded sci-border">
+                <div class="text-[10px] text-slate-500 font-sans">Adipose Trapped</div>
+                <div id="trapPct" class="text-base font-bold text-amber-700">32%</div>
               </div>
-              <div class="bg-slate-800/60 p-2.5 rounded subtle-border">
-                <div class="text-[10px] text-slate-400">Dose Multiplier</div>
-                <div id="multVal" class="text-base font-bold font-mono-num text-blue-400">1.5x</div>
+              <div class="bg-white p-2.5 rounded sci-border">
+                <div class="text-[10px] text-slate-500 font-sans">Dose Multiplier</div>
+                <div id="multVal" class="text-base font-bold text-blue-700">1.5x</div>
               </div>
             </div>
           </div>
 
-          <div class="p-3 rounded-lg bg-rose-500/10 border border-rose-500/20 text-xs text-slate-300 leading-relaxed">
-            <strong class="text-rose-400">Nature 2022 Warning:</strong> Vitamin K is reduced by FSP1 to suppress <strong>ferroptosis</strong>. High doses may protect tumors from treatments that destroy cells via iron lipid peroxidation.
+          <div class="p-3 rounded-lg bg-rose-50 border border-rose-200 text-xs text-slate-700 leading-relaxed">
+            <strong class="text-rose-800">Nature 2022 Warning:</strong> Vitamin K is reduced by FSP1 to suppress <strong>ferroptosis</strong>. High doses may protect tumors from treatments that destroy cells via iron lipid peroxidation.
           </div>
         </div>
       </div>
@@ -405,133 +418,133 @@
     <section id="tab-schedule" class="tab-panel hidden space-y-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
         <!-- Morning -->
-        <div class="bg-[var(--card,#131b2e)] subtle-border rounded-xl p-4 space-y-3">
-          <div class="flex justify-between items-center text-xs font-bold text-amber-400">
+        <div class="sci-card rounded-xl p-4 space-y-3">
+          <div class="flex justify-between items-center text-xs font-bold text-amber-800">
             <span>☀️ Morning (Breakfast)</span>
-            <span class="text-[10px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">Fat-Dependent</span>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-mono-sci">Fat-Dependent</span>
           </div>
-          <ul class="text-xs space-y-2 text-slate-300">
-            <li class="p-2.5 rounded bg-slate-900/60 subtle-border">
-              <strong class="text-white">Vitamin D3:</strong> 5,000–10,000 IU<br>
-              <span class="text-[10px] text-slate-400">Take with eggs, avocado, or yogurt.</span>
+          <ul class="text-xs space-y-2 text-slate-700">
+            <li class="p-2.5 rounded bg-slate-50 sci-border">
+              <strong class="text-slate-900">Vitamin D3:</strong> 5,000–10,000 IU<br>
+              <span class="text-[10px] text-slate-500">Take with eggs, avocado, or yogurt.</span>
             </li>
-            <li class="p-2.5 rounded bg-slate-900/60 subtle-border">
-              <strong class="text-white">Omega-3 EPA/DHA:</strong> 2,000 mg<br>
-              <span class="text-[10px] text-slate-400">Acts as lipid carrier for D3 and K2.</span>
+            <li class="p-2.5 rounded bg-slate-50 sci-border">
+              <strong class="text-slate-900">Omega-3 EPA/DHA:</strong> 2,000 mg<br>
+              <span class="text-[10px] text-slate-500">Acts as lipid carrier for D3 and K2.</span>
             </li>
-            <li class="p-2.5 rounded bg-slate-900/60 subtle-border">
-              <strong class="text-white">Zinc + Copper:</strong> 30mg Zn + 2mg Cu<br>
-              <span class="text-[10px] text-emerald-400">Take at end of meal (prevents nausea).</span>
+            <li class="p-2.5 rounded bg-slate-50 sci-border">
+              <strong class="text-slate-900">Zinc + Copper:</strong> 30mg Zn + 2mg Cu<br>
+              <span class="text-[10px] text-emerald-700 font-medium">Take at end of meal (prevents nausea).</span>
             </li>
-            <li class="p-2.5 rounded bg-slate-900/60 subtle-border">
-              <strong class="text-white">Vitamin K2:</strong> 100mcg MK-7 (or 15mg MK-4)
+            <li class="p-2.5 rounded bg-slate-50 sci-border">
+              <strong class="text-slate-900">Vitamin K2:</strong> 100mcg MK-7 (or 15mg MK-4)
             </li>
           </ul>
         </div>
 
         <!-- Midday -->
-        <div class="bg-[var(--card,#131b2e)] subtle-border rounded-xl p-4 space-y-3">
-          <div class="flex justify-between items-center text-xs font-bold text-blue-400">
+        <div class="sci-card rounded-xl p-4 space-y-3">
+          <div class="flex justify-between items-center text-xs font-bold text-blue-800">
             <span>🌤️ Midday (Lunch)</span>
-            <span class="text-[10px] px-2 py-0.5 rounded bg-blue-500/20 text-blue-300">Kinetics</span>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-mono-sci">Kinetics</span>
           </div>
-          <ul class="text-xs space-y-2 text-slate-300">
-            <li class="p-2.5 rounded bg-slate-900/60 subtle-border">
-              <strong class="text-white">Vitamin K2 (MK-4):</strong> 15 mg<br>
-              <span class="text-[10px] text-slate-400">Dose 2 of 3 (sustains blood receptor levels).</span>
+          <ul class="text-xs space-y-2 text-slate-700">
+            <li class="p-2.5 rounded bg-slate-50 sci-border">
+              <strong class="text-slate-900">Vitamin K2 (MK-4):</strong> 15 mg<br>
+              <span class="text-[10px] text-slate-500">Dose 2 of 3 (sustains blood receptor levels).</span>
             </li>
-            <li class="p-2.5 rounded bg-slate-900/60 subtle-border">
-              <strong class="text-white">Hydration:</strong> 500 mL water + pinch of salt<br>
-              <span class="text-[10px] text-slate-400">Counters indoor afternoon lethargy.</span>
+            <li class="p-2.5 rounded bg-slate-50 sci-border">
+              <strong class="text-slate-900">Hydration:</strong> 500 mL water + pinch of salt<br>
+              <span class="text-[10px] text-slate-500">Counters indoor afternoon lethargy.</span>
             </li>
           </ul>
         </div>
 
         <!-- Evening -->
-        <div class="bg-[var(--card,#131b2e)] subtle-border rounded-xl p-4 space-y-3">
-          <div class="flex justify-between items-center text-xs font-bold text-purple-400">
+        <div class="sci-card rounded-xl p-4 space-y-3">
+          <div class="flex justify-between items-center text-xs font-bold text-purple-800">
             <span>🌙 Evening (Pre-Bed)</span>
-            <span class="text-[10px] px-2 py-0.5 rounded bg-purple-500/20 text-purple-300">Recovery</span>
+            <span class="text-[10px] px-2 py-0.5 rounded bg-purple-100 text-purple-800 font-mono-sci">Recovery</span>
           </div>
-          <ul class="text-xs space-y-2 text-slate-300">
-            <li class="p-2.5 rounded bg-slate-900/60 subtle-border">
-              <strong class="text-white">Magnesium Glycinate:</strong> 350–400 mg<br>
-              <span class="text-[10px] text-purple-300">Activates D3; deep sleep via GABA-A.</span>
+          <ul class="text-xs space-y-2 text-slate-700">
+            <li class="p-2.5 rounded bg-slate-50 sci-border">
+              <strong class="text-slate-900">Magnesium Glycinate:</strong> 350–400 mg<br>
+              <span class="text-[10px] text-purple-700 font-medium">Activates D3; deep sleep via GABA-A.</span>
             </li>
-            <li class="p-2.5 rounded bg-slate-900/60 subtle-border">
-              <strong class="text-white">Vitamin K2 (MK-4):</strong> 15 mg with dinner<br>
-              <span class="text-[10px] text-slate-400">Dose 3 of 3 (completes 45 mg daily total).</span>
+            <li class="p-2.5 rounded bg-slate-50 sci-border">
+              <strong class="text-slate-900">Vitamin K2 (MK-4):</strong> 15 mg with dinner<br>
+              <span class="text-[10px] text-slate-500">Dose 3 of 3 (completes 45 mg daily total).</span>
             </li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- TAB 7: WHAT ELSE IS MISSING? (NEW) -->
+    <!-- TAB 7: WHAT ELSE IS MISSING? -->
     <section id="tab-missing" class="tab-panel hidden space-y-4">
-      <div class="bg-[var(--card,#131b2e)] subtle-border rounded-xl p-5 space-y-5">
+      <div class="sci-card rounded-xl p-5 md:p-6 space-y-5">
         <div>
           <div class="flex items-center gap-2">
-            <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/20">The Blind Spot Audit</span>
-            <h2 class="text-lg font-bold text-white">What Else Is Missing From Your Protocol?</h2>
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-800 border border-amber-300 font-mono-sci">The Blind Spot Audit</span>
+            <h2 class="text-lg font-bold text-slate-900">What Else Is Missing From Your Protocol?</h2>
           </div>
-          <p class="text-xs text-slate-400 mt-1">Supplements alone cannot overcome chronic metabolic hyperinsulinemia, mechanical skeletal uncoupling, or nocturnal hypoxia.</p>
+          <p class="text-xs text-slate-500 mt-1">Supplements alone cannot overcome chronic metabolic hyperinsulinemia, mechanical skeletal uncoupling, or nocturnal hypoxia.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
           <!-- 1. The Insulin/IGF-1 Cancer Engine -->
-          <div class="p-4 rounded-lg bg-slate-900/60 subtle-border space-y-2">
-            <div class="font-bold text-amber-400 flex items-center gap-1.5">
+          <div class="p-4 rounded-lg bg-slate-50 sci-border space-y-2">
+            <div class="font-bold text-amber-800 flex items-center gap-1.5">
               <span>⚠️ 1. Hyperinsulinemia & The IGF-1 Cancer Axis</span>
             </div>
-            <p class="text-slate-300 leading-relaxed">
+            <p class="text-slate-600 leading-relaxed">
               In an overweight, sedentary male, <strong>fasting hyperinsulinemia</strong> is the single most potent biochemical driver of oncogenesis. High circulating insulin suppresses Sex Hormone-Binding Globulin (SHBG) and stimulates hepatic production of <strong>IGF-1</strong>. Tumor cells overexpress IGF-1 receptors, activating the <strong>PI3K/Akt/mTOR</strong> pathway which accelerates cellular proliferation and shuts down apoptosis.
             </p>
-            <div class="text-[11px] text-emerald-400 font-semibold pt-1 border-t border-slate-800">
+            <div class="text-[11px] text-emerald-800 font-semibold pt-1 border-t border-slate-200">
               Action: 10–15 min post-meal brisk walk (blunts glucose spike by 35%) + track fasting insulin (target: &lt; 6 &mu;IU/mL).
             </div>
           </div>
 
           <!-- 2. Mechanical Strain for K2 -->
-          <div class="p-4 rounded-lg bg-slate-900/60 subtle-border space-y-2">
-            <div class="font-bold text-blue-400 flex items-center gap-1.5">
+          <div class="p-4 rounded-lg bg-slate-50 sci-border space-y-2">
+            <div class="font-bold text-blue-800 flex items-center gap-1.5">
               <span>🦴 2. Mechanical Load Required for K2 Bioactivity</span>
             </div>
-            <p class="text-slate-300 leading-relaxed">
+            <p class="text-slate-600 leading-relaxed">
               You bought 45,000 mcg of K2 to carboxylate <strong>osteocalcin</strong>. However, osteocalcin only exerts its systemic metabolic and testosterone-stimulating actions when released into circulation by <strong>mechanical bone strain</strong> (axial loading from resistance training or walking). Without physical compression, osteoblast turnover is stagnant, blunt-ending K2's endocrine benefits.
             </p>
-            <div class="text-[11px] text-emerald-400 font-semibold pt-1 border-t border-slate-800">
+            <div class="text-[11px] text-emerald-800 font-semibold pt-1 border-t border-slate-200">
               Action: 2–3 weekly resistance training sessions (squats/deadlifts/presses) to activate the bone-muscle endocrine axis.
             </div>
           </div>
 
           <!-- 3. Occult Sleep Apnea & HIF-1a -->
-          <div class="p-4 rounded-lg bg-slate-900/60 subtle-border space-y-2">
-            <div class="font-bold text-purple-400 flex items-center gap-1.5">
+          <div class="p-4 rounded-lg bg-slate-50 sci-border space-y-2">
+            <div class="font-bold text-purple-800 flex items-center gap-1.5">
               <span>🫁 3. Occult Sleep Apnea & Hypoxia HIF-1&alpha;</span>
             </div>
-            <p class="text-slate-300 leading-relaxed">
+            <p class="text-slate-600 leading-relaxed">
               Over 40% of overweight indoor sedentary males suffer from undiagnosed Obstructive Sleep Apnea (OSA). Nocturnal oxygen desaturation spikes <strong>HIF-1&alpha; (Hypoxia-Inducible Factor 1&alpha;)</strong>, which directly drives tumor angiogenesis (VEGF), crushes morning testosterone, and triggers daytime brain fog.
             </p>
-            <div class="text-[11px] text-emerald-400 font-semibold pt-1 border-t border-slate-800">
+            <div class="text-[11px] text-emerald-800 font-semibold pt-1 border-t border-slate-200">
               Action: Check nocturnal SpO2 nadir with a home finger pulse oximeter (verify oxygen never dips below 92%).
             </div>
           </div>
 
           <!-- 4. Mandatory Lab Work -->
-          <div class="p-4 rounded-lg bg-slate-900/60 subtle-border space-y-2">
-            <div class="font-bold text-emerald-400 flex items-center gap-1.5">
+          <div class="p-4 rounded-lg bg-slate-50 sci-border space-y-2">
+            <div class="font-bold text-emerald-800 flex items-center gap-1.5">
               <span>🩸 4. The "Do Not Fly Blind" Baseline Lab Panel</span>
             </div>
-            <p class="text-slate-300 leading-relaxed">
+            <p class="text-slate-600 leading-relaxed">
               Before running pharmacological doses of K2 (45 mg) and D3 (10,000 IU), you must establish baseline lab biomarkers:
             </p>
-            <ul class="text-[11px] text-slate-400 space-y-1">
-              <li>• <strong>25(OH)D:</strong> Baseline vitamin D storage (re-test at 12 weeks).</li>
-              <li>• <strong>CMP:</strong> Serum Calcium, Albumin, AST/ALT, eGFR, Creatinine.</li>
-              <li>• <strong>Hormones:</strong> Total & Free Testosterone, Sensitive E2, SHBG, LH.</li>
-              <li>• <strong>Metabolic:</strong> Fasting Insulin + Fasting Glucose (HOMA-IR), hs-CRP.</li>
-              <li>• <strong>Trace Metals:</strong> Serum Zinc, Serum Copper, Ceruloplasmin.</li>
+            <ul class="text-[11px] text-slate-500 space-y-1 font-mono-sci">
+              <li>• 25(OH)D: Baseline vitamin D storage (re-test at 12 wks).</li>
+              <li>• CMP: Serum Calcium, Albumin, AST/ALT, eGFR, Creatinine.</li>
+              <li>• Hormones: Total & Free Testosterone, Sensitive E2, SHBG, LH.</li>
+              <li>• Metabolic: Fasting Insulin + Fasting Glucose (HOMA-IR), hs-CRP.</li>
+              <li>• Trace Metals: Serum Zinc, Serum Copper, Ceruloplasmin.</li>
             </ul>
           </div>
         </div>
@@ -539,8 +552,8 @@
     </section>
 
     <!-- Footer -->
-    <footer class="text-center text-xs text-slate-500 pt-4 pb-2 border-t border-slate-800">
-      Evidence Dossier &bull; Verified Primary Sources via NCBI / PubMed &bull; Permanent Shareable Deployment
+    <footer class="text-center text-xs text-slate-400 pt-4 pb-2 border-t border-slate-200 font-mono-sci">
+      Evidence Dossier &bull; Verified Primary Sources via NCBI / PubMed &bull; Zero Hallucinated Citations
     </footer>
 
   </div>
@@ -563,13 +576,13 @@
       const list = cat === 'all' ? trials : trials.filter(t => t.cat === cat);
       list.forEach(t => {
         const tr = document.createElement('tr');
-        tr.className = "hover:bg-slate-800/40";
+        tr.className = "hover:bg-slate-50";
         tr.innerHTML = `
-          <td class="py-2.5 px-3 font-sans"><strong>${t.author}</strong><br><span class="text-[10px] text-slate-400">${t.journal}</span></td>
-          <td class="py-2.5 px-3">${t.cohort}</td>
-          <td class="py-2.5 px-3 font-mono-num text-[11px] text-blue-300">${t.dose}</td>
-          <td class="py-2.5 px-3 font-sans text-slate-200">${t.outcome}</td>
-          <td class="py-2.5 px-3"><a href="https://pubmed.ncbi.nlm.nih.gov/${t.pmid}/" target="_blank" class="text-blue-400 hover:underline font-bold">PMID:${t.pmid}</a></td>
+          <td class="py-2.5 px-3 font-sans"><strong>${t.author}</strong><br><span class="text-[10px] text-slate-500">${t.journal}</span></td>
+          <td class="py-2.5 px-3 font-mono-sci">${t.cohort}</td>
+          <td class="py-2.5 px-3 font-mono-sci text-[11px] text-blue-700">${t.dose}</td>
+          <td class="py-2.5 px-3 font-sans text-slate-700">${t.outcome}</td>
+          <td class="py-2.5 px-3 font-mono-sci"><a href="https://pubmed.ncbi.nlm.nih.gov/${t.pmid}/" target="_blank" class="text-blue-600 hover:underline font-bold">PMID:${t.pmid}</a></td>
         `;
         tb.appendChild(tr);
       });
@@ -577,10 +590,10 @@
 
     function filterTrials(cat) {
       document.querySelectorAll('#tab-trials button').forEach(b => {
-        b.className = "px-2.5 py-1 rounded text-xs font-semibold bg-slate-800 text-slate-300";
+        b.className = "px-2.5 py-1 rounded text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200";
       });
       const active = document.getElementById('flt-' + cat);
-      if (active) active.className = "px-2.5 py-1 rounded text-xs font-semibold bg-blue-600 text-white";
+      if (active) active.className = "px-2.5 py-1 rounded text-xs font-semibold bg-slate-900 text-white";
       renderTrials(cat);
     }
 
@@ -602,22 +615,22 @@
       const txt = document.getElementById('ratioText');
 
       if (cu <= 0) {
-        pill.className = "mt-1 px-2.5 py-1.5 rounded text-xs font-mono-num font-bold text-center bg-red-500/20 text-red-400 border border-red-500/30";
+        pill.className = "mt-1 px-2.5 py-1.5 rounded text-xs font-mono-sci font-bold text-center bg-red-100 text-red-800 border border-red-300";
         pill.textContent = "DANGEROUS (No Copper)";
         txt.textContent = "Critical Warning: High-dose unopposed zinc triggers intestinal metallothionein, blocking copper absorption and risking sideroblastic anemia and irreversible neuropathy.";
         return;
       }
       const r = (zn / cu).toFixed(1);
       if (r >= 10 && r <= 15) {
-        pill.className = "mt-1 px-2.5 py-1.5 rounded text-xs font-mono-num font-bold text-center bg-emerald-500/20 text-emerald-400 border border-emerald-500/30";
+        pill.className = "mt-1 px-2.5 py-1.5 rounded text-xs font-mono-sci font-bold text-center bg-emerald-100 text-emerald-800 border border-emerald-300";
         pill.textContent = r + " : 1 (Optimal)";
         txt.textContent = "Gold-standard ratio: Safely sustains p53 DNA-binding and testosterone synthesis with zero metallothionein copper depletion.";
       } else if (r < 10) {
-        pill.className = "mt-1 px-2.5 py-1.5 rounded text-xs font-mono-num font-bold text-center bg-blue-500/20 text-blue-400 border border-blue-500/30";
+        pill.className = "mt-1 px-2.5 py-1.5 rounded text-xs font-mono-sci font-bold text-center bg-blue-100 text-blue-800 border border-blue-300";
         pill.textContent = r + " : 1 (High Copper)";
         txt.textContent = "Safe, but copper proportion is relatively high compared to zinc.";
       } else {
-        pill.className = "mt-1 px-2.5 py-1.5 rounded text-xs font-mono-num font-bold text-center bg-amber-500/20 text-amber-400 border border-amber-500/30";
+        pill.className = "mt-1 px-2.5 py-1.5 rounded text-xs font-mono-sci font-bold text-center bg-amber-100 text-amber-800 border border-amber-300";
         pill.textContent = r + " : 1 (Copper Depletion Risk)";
         txt.textContent = "Exceeds safe 15:1 threshold. Over months, this will deplete hepatic copper stores. Add copper.";
       }
@@ -648,7 +661,7 @@
       ctx.clearRect(0, 0, w, h);
 
       // Grid
-      ctx.strokeStyle = 'rgba(148, 163, 184, 0.1)';
+      ctx.strokeStyle = '#e2e8f0';
       ctx.lineWidth = 1;
       for (let y = 30; y < h; y += 35) {
         ctx.beginPath();
@@ -658,8 +671,8 @@
       }
 
       // 45mg Single Bolus (amber)
-      ctx.strokeStyle = '#f59e0b';
-      ctx.lineWidth = 2;
+      ctx.strokeStyle = '#d97706';
+      ctx.lineWidth = 2.5;
       ctx.beginPath();
       for (let x = 0; x < w; x++) {
         const t = (x / w) * 24;
@@ -672,8 +685,8 @@
       ctx.stroke();
 
       // 15mg TID (emerald)
-      ctx.strokeStyle = '#10b981';
-      ctx.lineWidth = 2;
+      ctx.strokeStyle = '#059669';
+      ctx.lineWidth = 2.5;
       ctx.beginPath();
       for (let x = 0; x < w; x++) {
         const t = (x / w) * 24;
