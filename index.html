@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NYC Male Health Protocol: Max Dosing & Interactive Ailment Engine (34yo)</title>
+  <title>NYC Male Health Protocol: Max Dosing & Complete Systemic Audit (34yo)</title>
   <!-- Google Fonts: Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,7 +35,6 @@
     ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
     
-    /* Clean Minimalist Cards: Soft shadow, zero harsh side borders */
     .sci-card {
       background-color: #ffffff;
       border: 1px solid #e2e8f0;
@@ -96,10 +95,10 @@
           </div>
           
           <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 mt-2">
-            Micronutrient Pharmacology, Max Dosing & Ailments Engine
+            Micronutrient Pharmacology, Max Dosing & Systemic Audit
           </h1>
           <p class="text-xs md:text-sm text-slate-600 mt-1 max-w-3xl">
-            Complete study-grounded guide to the <strong>absolute MAX safe clinical doses</strong>, primary target ailments, and biochemical mechanisms connecting all 13 therapeutic levers.
+            Complete study-grounded guide to the <strong>absolute MAX safe clinical doses</strong>, primary target ailments, and the <strong>Master Systemic Audit</strong> of everything missing that is needed.
           </p>
         </div>
 
@@ -126,6 +125,10 @@
           <svg class="w-3.5 h-3.5 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.37-.484-.717-1.012-1.207-2.03zM10.707 9.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" clip-rule="evenodd"/></svg>
           Max Doses & Ailment Tags
         </button>
+        <button onclick="selectTab('missing-needed')" id="btn-missing-needed" class="tab-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-rose-800 bg-rose-50/70 border border-rose-200/80 hover:bg-rose-100 flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          🚨 Everything Missing That's Needed
+        </button>
         <button onclick="selectTab('home')" id="btn-home" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 flex items-center gap-1.5">
           <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
           NYC Summary Dashboard
@@ -142,24 +145,281 @@
           <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
           K2 Oncology Trials
         </button>
-        <button onclick="selectTab('swarm')" id="btn-swarm" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-          Swarm Clinical Dossier
-        </button>
         <button onclick="selectTab('schedule')" id="btn-schedule" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-900 flex items-center gap-1.5">
           <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           Daily Schedule
         </button>
-        <button onclick="selectTab('missing')" id="btn-missing" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-amber-800 bg-amber-50/70 border border-amber-200/70 hover:bg-amber-100 flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
-          Blind Spot Audit
-        </button>
       </nav>
     </header>
 
+    <!-- TAB: EVERYTHING MISSING THAT'S NEEDED (NEW AUDIT) -->
+    <section id="tab-missing-needed" class="tab-panel hidden space-y-5">
+      
+      <!-- Banner -->
+      <div class="sci-card p-5 space-y-2">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-rose-600"></span>
+          <h2 class="text-base font-bold text-slate-900">The Complete Systemic Audit: Everything Missing That's Needed</h2>
+        </div>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Supplements are biochemical levers, but they operate inside a biological ecosystem. For a <strong>34-year-old overweight male sitting indoors all day in NYC</strong> taking high-dose K2 (45,000 mcg), here is the clinical inventory of the 5 missing categories: <strong>Biological Cofactors</strong>, <strong>Critical Safety Traps</strong>, <strong>Physical Hardware</strong>, <strong>Diagnostic Baseline Blood Panels</strong>, and the <strong>4-Week Staged Ramp-Up Protocol</strong>.
+        </p>
+      </div>
+
+      <!-- 1. The 5 Missing Biological Cofactors -->
+      <div class="sci-card p-5 space-y-4">
+        <div class="flex justify-between items-center border-b border-slate-100 pb-2.5">
+          <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+            <span class="w-6 h-6 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center text-xs font-bold font-mono-sci">1</span>
+            Missing Biological Nutrients & Cofactors
+          </h3>
+          <span class="text-[10px] font-mono-sci text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">5 Missing Levers</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
+          <!-- Choline / TMG -->
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1.5">
+            <div class="flex justify-between items-center">
+              <span class="font-bold text-slate-900">Choline / TMG</span>
+              <span class="text-[10px] font-mono-sci font-bold text-slate-600">500–1,000 mg/d</span>
+            </div>
+            <p class="text-slate-600 leading-relaxed text-[11px]">
+              <strong class="text-slate-900">Why It's Missing:</strong> Mandatory for synthesizing phosphatidylcholine. Without choline, the liver <strong>cannot export triglycerides</strong> into VLDL particles, trapping fat inside hepatocytes and worsening fatty liver (NAFLD) regardless of berberine.
+            </p>
+          </div>
+
+          <!-- Preformed Retinol -->
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1.5">
+            <div class="flex justify-between items-center">
+              <span class="font-bold text-slate-900">Preformed Vitamin A</span>
+              <span class="text-[10px] font-mono-sci font-bold text-slate-600">3,000–5,000 IU/d</span>
+            </div>
+            <p class="text-slate-600 leading-relaxed text-[11px]">
+              <strong class="text-slate-900">Why It's Missing:</strong> Vitamin D Receptor (VDR) cannot transcribe genes alone; it <strong>must heterodimerize with Retinoid X Receptor (RXR)</strong> (<a href="https://pubmed.ncbi.nlm.nih.gov/1310351/" target="_blank" class="text-blue-600 underline">Kliewer 1992</a>). High D3 without Retinol causes functional retinoid exhaustion.
+            </p>
+          </div>
+
+          <!-- Potassium -->
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1.5">
+            <div class="flex justify-between items-center">
+              <span class="font-bold text-slate-900">Dietary Potassium</span>
+              <span class="text-[10px] font-mono-sci font-bold text-slate-600">3,500–4,500 mg/d</span>
+            </div>
+            <p class="text-slate-600 leading-relaxed text-[11px]">
+              <strong class="text-slate-900">Why It's Missing:</strong> NYC takeout foods are hyper-saturated in sodium and nearly void of potassium. Potassium is mandatory for cellular insulin receptor tyrosine phosphorylation and blood pressure regulation. Supplement via avocados or potassium chloride salt.
+            </p>
+          </div>
+
+          <!-- Iodine -->
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1.5">
+            <div class="flex justify-between items-center">
+              <span class="font-bold text-slate-900">Elemental Iodine</span>
+              <span class="text-[10px] font-mono-sci font-bold text-slate-600">150–250 mcg/d</span>
+            </div>
+            <p class="text-slate-600 leading-relaxed text-[11px]">
+              <strong class="text-slate-900">Why It's Missing:</strong> Selenium activates DIO1/DIO2 deiodinase enzymes to convert T4 to active T3, but if substrate iodine is deficient (common with gourmet sea/himalayan salts), thyroid synthesis stalls.
+            </p>
+          </div>
+
+          <!-- TUDCA / Bile Salts -->
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1.5">
+            <div class="flex justify-between items-center">
+              <span class="font-bold text-slate-900">TUDCA / Bile Salts</span>
+              <span class="text-[10px] font-mono-sci font-bold text-slate-600">250–500 mg/d</span>
+            </div>
+            <p class="text-slate-600 leading-relaxed text-[11px]">
+              <strong class="text-slate-900">Why It's Missing:</strong> Taking massive fat-soluble vitamins (45mg K2 MK-4, MK-7, D3, CoQ10, Omega-3) requires optimal gallbladder bile flow. Sluggish sedentary bile flow causes malabsorption. TUDCA ensures micellization.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Critical Safety Traps & Pharmacology Rules -->
+      <div class="sci-card p-5 space-y-4">
+        <div class="flex justify-between items-center border-b border-slate-100 pb-2.5">
+          <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+            <span class="w-6 h-6 rounded-lg bg-rose-50 border border-rose-200 text-rose-700 flex items-center justify-center text-xs font-bold font-mono-sci">2</span>
+            Critical Pharmacology & Safety Traps (Do Not Overlook)
+          </h3>
+          <span class="text-[10px] font-mono-sci text-rose-800 bg-rose-50 px-2 py-0.5 rounded-full border border-rose-200">Non-Negotiable</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1.5">
+            <div class="font-bold text-rose-800">1. Warfarin / Coumarin Absolute Lock</div>
+            <p class="text-slate-600 leading-relaxed text-[11px]">
+              45,000 mcg Vitamin K2 completely overrides the anticoagulant mechanism of coumarin-class blood thinners (Warfarin/Jantoven), triggering catastrophic clotting. You must verify you are not taking coumarins.
+            </p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1.5">
+            <div class="font-bold text-amber-800">2. Berberine CYP3A4 Enzyme Inhibition</div>
+            <p class="text-slate-600 leading-relaxed text-[11px]">
+              Berberine is a potent reversible inhibitor of hepatic CYP3A4 and CYP2D6 enzymes. If you take any prescription pharmaceuticals (statins, blood pressure meds, antihistamines), Berberine multiplies their plasma concentration.
+            </p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1.5">
+            <div class="font-bold text-blue-800">3. Zinc Nausea & Copper Order</div>
+            <p class="text-slate-600 leading-relaxed text-[11px]">
+              Never take 30–40mg zinc on an empty stomach (causes immediate vagal gastric spasm/vomiting). Always take at the end of a full meal, and always maintain 2mg copper to prevent irreversible myelopathy.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Physical & Environmental Hardware (Non-Pill Essentials) -->
+      <div class="sci-card p-5 space-y-4">
+        <div class="flex justify-between items-center border-b border-slate-100 pb-2.5">
+          <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+            <span class="w-6 h-6 rounded-lg bg-blue-50 border border-blue-200 text-blue-700 flex items-center justify-center text-xs font-bold font-mono-sci">3</span>
+            Physical Environmental & Skeletal Tools (No Pill Can Replace)
+          </h3>
+          <span class="text-[10px] font-mono-sci text-blue-800 bg-blue-50 px-2 py-0.5 rounded-full border border-blue-200">Environmental</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1.5">
+            <div class="font-bold text-slate-900">☀️ 10,000 Lux Desk Light Box</div>
+            <p class="text-slate-600 leading-relaxed text-[11px]">
+              NYC indoor apartments provide only 200–400 lux. The human circadian pacemaker (SCN) requires >10,000 lux within 45 minutes of waking to trigger cortisol awakening response and reset evening melatonin.
+            </p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1.5">
+            <div class="font-bold text-slate-900">🦴 Axial Skeletal Load (Steps / Squats)</div>
+            <p class="text-slate-600 leading-relaxed text-[11px]">
+              K2 carboxylates osteocalcin, but <strong>osteocalcin only enters the bloodstream upon physical bone compression</strong> (Piezo1 channels). 8,000 steps/day or bodyweight squats are biologically required to boost testosterone.
+            </p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1.5">
+            <div class="font-bold text-slate-900">🫁 Home Finger Pulse Oximeter</div>
+            <p class="text-slate-600 leading-relaxed text-[11px]">
+              Over 40% of overweight desk-workers suffer from occult sleep apnea. Nocturnal hypoxia spikes HIF-1&alpha; (driving cancer angiogenesis) and crushes testosterone. Verify your overnight SpO2 nadir stays &ge;92%.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. The "Do Not Fly Blind" Diagnostic Blood Panel -->
+      <div class="sci-card p-5 space-y-4">
+        <div class="flex justify-between items-center border-b border-slate-100 pb-2.5">
+          <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+            <span class="w-6 h-6 rounded-lg bg-purple-50 border border-purple-200 text-purple-700 flex items-center justify-center text-xs font-bold font-mono-sci">4</span>
+            The "Do Not Fly Blind" Diagnostic Blood Panel Checklist
+          </h3>
+          <span class="text-[10px] font-mono-sci text-purple-800 bg-purple-50 px-2 py-0.5 rounded-full border border-purple-200">Baseline Labs</span>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs border-collapse font-sans">
+            <thead>
+              <tr class="border-b border-slate-200 text-slate-500 bg-slate-50">
+                <th class="py-2.5 px-3 font-semibold">Biomarker</th>
+                <th class="py-2.5 px-3 font-semibold">Clinical Standard Range</th>
+                <th class="py-2.5 px-3 font-semibold text-emerald-800">Target Optimal Sweet Spot</th>
+                <th class="py-2.5 px-3 font-semibold">Why It Must Be Checked</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 font-mono-sci text-xs">
+              <tr>
+                <td class="py-2.5 px-3 font-bold text-slate-900 font-sans">25(OH)D Total</td>
+                <td class="py-2.5 px-3 text-slate-600">30–100 ng/mL</td>
+                <td class="py-2.5 px-3 font-bold text-emerald-700">55–75 ng/mL</td>
+                <td class="py-2.5 px-3 font-sans text-[11px] text-slate-600">Verifies whether 10,000 IU is overcoming adipose trap without toxicity.</td>
+              </tr>
+              <tr>
+                <td class="py-2.5 px-3 font-bold text-slate-900 font-sans">Corrected Calcium</td>
+                <td class="py-2.5 px-3 text-slate-600">8.6–10.2 mg/dL</td>
+                <td class="py-2.5 px-3 font-bold text-emerald-700">9.0–9.6 mg/dL</td>
+                <td class="py-2.5 px-3 font-sans text-[11px] text-slate-600">Absolute safety gate against hypercalcemia while taking D3 + K2.</td>
+              </tr>
+              <tr>
+                <td class="py-2.5 px-3 font-bold text-slate-900 font-sans">Fasting Insulin</td>
+                <td class="py-2.5 px-3 text-slate-600">2.6–24.9 &mu;IU/mL</td>
+                <td class="py-2.5 px-3 font-bold text-emerald-700">&lt; 5.0 &mu;IU/mL</td>
+                <td class="py-2.5 px-3 font-sans text-[11px] text-slate-600">Primary driver of oncogenic mTOR and SHBG suppression; tracks Berberine.</td>
+              </tr>
+              <tr>
+                <td class="py-2.5 px-3 font-bold text-slate-900 font-sans">hs-CRP</td>
+                <td class="py-2.5 px-3 text-slate-600">0.0–3.0 mg/L</td>
+                <td class="py-2.5 px-3 font-bold text-emerald-700">&lt; 0.5 mg/L</td>
+                <td class="py-2.5 px-3 font-sans text-[11px] text-slate-600">Systemic vascular & arterial inflammation; tracks Boron/CoQ10 reduction.</td>
+              </tr>
+              <tr>
+                <td class="py-2.5 px-3 font-bold text-slate-900 font-sans">Serum Zinc / Copper</td>
+                <td class="py-2.5 px-3 text-slate-600">Zn: 70–120 &bull; Cu: 70–140</td>
+                <td class="py-2.5 px-3 font-bold text-emerald-700">Ratio: 0.9–1.1 (Serum)</td>
+                <td class="py-2.5 px-3 font-sans text-[11px] text-slate-600">Proves dietary 15:1 ratio is preventing metallothionein copper depletion.</td>
+              </tr>
+              <tr>
+                <td class="py-2.5 px-3 font-bold text-slate-900 font-sans">Liver GGT & ALT</td>
+                <td class="py-2.5 px-3 text-slate-600">ALT: &lt;40 &bull; GGT: &lt;60</td>
+                <td class="py-2.5 px-3 font-bold text-emerald-700">ALT: &lt;25 &bull; GGT: &lt;20</td>
+                <td class="py-2.5 px-3 font-sans text-[11px] text-slate-600">GGT is the gold-standard marker of liver oxidative stress and glutathione status.</td>
+              </tr>
+              <tr>
+                <td class="py-2.5 px-3 font-bold text-slate-900 font-sans">Free & Total Testosterone</td>
+                <td class="py-2.5 px-3 text-slate-600">Total: 300–1000 ng/dL</td>
+                <td class="py-2.5 px-3 font-bold text-emerald-700">Free: &gt;15 pg/mL (&gt;2% free)</td>
+                <td class="py-2.5 px-3 font-sans text-[11px] text-slate-600">Tracks SHBG desaturation from Boron and Leydig stimulation from Zinc/K2.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 5. Structured 4-Week Ramp-Up Schedule -->
+      <div class="sci-card p-5 space-y-4">
+        <div class="flex justify-between items-center border-b border-slate-100 pb-2.5">
+          <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+            <span class="w-6 h-6 rounded-lg bg-amber-50 border border-amber-200 text-amber-700 flex items-center justify-center text-xs font-bold font-mono-sci">5</span>
+            4-Week Staged Ramp-Up Schedule (Prevents Digestive Shock)
+          </h3>
+          <span class="text-[10px] font-mono-sci text-amber-800 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">Ramp Up</span>
+        </div>
+
+        <p class="text-xs text-slate-600 leading-relaxed">
+          <strong>CRITICAL WARNING:</strong> Taking all 13 pharmacological supplements on Day 1 will cause severe gastrointestinal cramping, diarrhea, and nausea (especially Berberine + Zinc + Magnesium + NAC). Introduce them systematically in 4 weekly phases:
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs font-mono-sci">
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1">
+            <div class="font-bold text-slate-900 font-sans">Week 1: Core Foundation</div>
+            <ul class="text-[11px] text-slate-600 space-y-0.5">
+              <li>&bull; Vitamin D3 (5k IU) + MK-7 (100mcg)</li>
+              <li>&bull; Magnesium Glycinate (400mg)</li>
+              <li>&bull; Omega-3 (2,000mg)</li>
+            </ul>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1">
+            <div class="font-bold text-slate-900 font-sans">Week 2: Androgen & Vessels</div>
+            <ul class="text-[11px] text-slate-600 space-y-0.5">
+              <li>&bull; Add Zinc (30mg) + Copper (2mg)</li>
+              <li>&bull; Add Boron (10mg)</li>
+              <li>&bull; Start K2 MK-4 (15mg 1x/day with dinner)</li>
+            </ul>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1">
+            <div class="font-bold text-slate-900 font-sans">Week 3: Full K2 & Mitochondria</div>
+            <ul class="text-[11px] text-slate-600 space-y-0.5">
+              <li>&bull; Escalate K2 MK-4 to full 15mg TID (45mg)</li>
+              <li>&bull; Add CoQ10 Ubiquinol (200mg)</li>
+              <li>&bull; Add Selenium (200mcg) + Taurine (1.5g)</li>
+            </ul>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1">
+            <div class="font-bold text-slate-900 font-sans">Week 4: Metabolic Levers</div>
+            <ul class="text-[11px] text-slate-600 space-y-0.5">
+              <li>&bull; Add Berberine (500mg 1x/day, build to TID)</li>
+              <li>&bull; Add GlyNAC (3g Glycine + 3g NAC)</li>
+              <li>&bull; Re-evaluate GI comfort and energy</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
     <!-- TAB: MAX DOSING & INTERACTIVE AILMENT TAG ENGINE -->
     <section id="tab-max-engine" class="tab-panel space-y-5">
-      
       <!-- Interactive Filter Bar -->
       <div class="sci-card p-5 space-y-3">
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
@@ -201,7 +461,7 @@
 
     <!-- TAB: NYC SUMMARY DASHBOARD -->
     <section id="tab-home" class="tab-panel hidden space-y-5">
-      <!-- NYC Reality Card (Clean minimal, zero harsh borders) -->
+      <!-- NYC Reality Card -->
       <div class="sci-card p-5 space-y-3">
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
           <div class="flex items-center gap-2 text-xs font-bold text-slate-900 uppercase font-mono-sci tracking-wider">
@@ -217,7 +477,7 @@
         </p>
       </div>
 
-      <!-- The 4 Master Pillars Minimal Cards with Icons & Subtle Labels -->
+      <!-- The 4 Master Pillars Minimal Cards -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <!-- Pillar 1 -->
         <div class="sci-card sci-card-hover p-4 space-y-3">
@@ -375,7 +635,7 @@
           </div>
         </div>
 
-        <!-- The Copper Alert (Clean rounded, subtle red tint) -->
+        <!-- The Copper Alert -->
         <div class="p-4 rounded-xl bg-rose-50/50 border border-rose-200/80 space-y-1.5 text-xs">
           <div class="flex items-center gap-2 font-bold text-rose-800">
             <svg class="w-4 h-4 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
@@ -443,49 +703,6 @@
               <!-- Dynamically Populated -->
             </tbody>
           </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- TAB: SWARM RESEARCH FINDINGS -->
-    <section id="tab-swarm" class="tab-panel hidden space-y-4">
-      <div class="sci-card p-5 md:p-6 space-y-4">
-        <div>
-          <h2 class="text-lg font-bold text-slate-900">Swarm Research Intelligence Dossier</h2>
-          <p class="text-xs text-slate-500 mt-0.5">Synthesizing human clinical trials across Boron, Selenium, CoQ10, GlyNAC, Berberine & Taurine.</p>
-        </div>
-
-        <!-- Boron -->
-        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2 text-xs">
-          <div class="flex justify-between items-center">
-            <span class="font-bold text-slate-900 text-sm">Boron: SHBG Desaturation & Free Testosterone</span>
-            <span class="font-mono-sci font-bold text-amber-800 bg-amber-100/70 border border-amber-200/70 px-2 py-0.5 rounded-full">+28.3% Free-T</span>
-          </div>
-          <p class="text-slate-600 leading-relaxed">
-            10 mg/day elemental boron for 7 days increased free testosterone from 11.83 to 15.18 pg/mL (p=0.012), reduced estradiol by -39%, and cut hsCRP by -50% (<a href="https://pubmed.ncbi.nlm.nih.gov/21129941/" target="_blank" class="text-blue-600 hover:underline">Naghii 2011</a>). Extends D3 half-life via CYP24A1 inhibition (<a href="https://pubmed.ncbi.nlm.nih.gov/15504575/" target="_blank" class="text-blue-600 hover:underline">Miljkovic 2004</a>).
-          </p>
-        </div>
-
-        <!-- Selenium -->
-        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2 text-xs">
-          <div class="flex justify-between items-center">
-            <span class="font-bold text-slate-900 text-sm">Selenium: GPX4 & Chemoprevention</span>
-            <span class="font-mono-sci font-bold text-blue-800 bg-blue-100/70 border border-blue-200/70 px-2 py-0.5 rounded-full">-63% Prostate Cancer</span>
-          </div>
-          <p class="text-slate-600 leading-relaxed">
-            200 &mu;g/day L-selenomethionine reduced prostate cancer incidence by -63% (p=0.002) and total cancer mortality by -50% (p=0.002) in deficient baselines (<a href="https://pubmed.ncbi.nlm.nih.gov/8971064/" target="_blank" class="text-blue-600 hover:underline">Clark 1996</a>; <a href="https://pubmed.ncbi.nlm.nih.gov/22381456/" target="_blank" class="text-blue-600 hover:underline">Rayman 2012</a>). Slashes thyroid anti-TPO by -36% to -46% (<a href="https://pubmed.ncbi.nlm.nih.gov/11932266/" target="_blank" class="text-blue-600 hover:underline">Gärtner 2002</a>).
-          </p>
-        </div>
-
-        <!-- CoQ10 & GlyNAC -->
-        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2 text-xs">
-          <div class="flex justify-between items-center">
-            <span class="font-bold text-slate-900 text-sm">CoQ10 & GlyNAC: Mitochondria & Glutathione</span>
-            <span class="font-mono-sci font-bold text-purple-800 bg-purple-100/70 border border-purple-200/70 px-2 py-0.5 rounded-full">-50% MACE &bull; +225% GSH</span>
-          </div>
-          <p class="text-slate-600 leading-relaxed">
-            CoQ10 300 mg/day cut cardiovascular mortality by -44% (<a href="https://pubmed.ncbi.nlm.nih.gov/25282031/" target="_blank" class="text-blue-600 hover:underline">Mortensen 2014</a>). GlyNAC (Glycine + NAC) restored RBC glutathione by +225% and dropped insulin resistance (HOMA-IR) by -64% (<a href="https://pubmed.ncbi.nlm.nih.gov/35975308/" target="_blank" class="text-blue-600 hover:underline">Kumar 2023</a>).
-          </p>
         </div>
       </div>
     </section>
@@ -562,44 +779,6 @@
               <strong class="text-slate-900">Vitamin K2 (MK-4):</strong> 15 mg with dinner (Dose 3/3)
             </li>
           </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- TAB: BLIND SPOT AUDIT -->
-    <section id="tab-missing" class="tab-panel hidden space-y-4">
-      <div class="sci-card p-5 md:p-6 space-y-5">
-        <div>
-          <h2 class="text-lg font-bold text-slate-900">The Blind Spot Audit (What Else Is Missing?)</h2>
-          <p class="text-xs text-slate-500 mt-0.5">Supplements alone cannot overcome chronic metabolic hyperinsulinemia, mechanical skeletal uncoupling, or nocturnal hypoxia.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-          <!-- 1. The Insulin/IGF-1 Cancer Engine -->
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2">
-            <div class="font-bold text-amber-800 flex items-center gap-1.5">
-              <span>⚠️ 1. Hyperinsulinemia & The IGF-1 Cancer Axis</span>
-            </div>
-            <p class="text-slate-600 leading-relaxed">
-              In an overweight, sedentary male, <strong>fasting hyperinsulinemia</strong> is the single most potent biochemical driver of oncogenesis. High circulating insulin suppresses Sex Hormone-Binding Globulin (SHBG) and stimulates hepatic production of <strong>IGF-1</strong>. Tumor cells overexpress IGF-1 receptors, activating the <strong>PI3K/Akt/mTOR</strong> pathway which accelerates cellular proliferation and shuts down apoptosis.
-            </p>
-            <div class="text-[11px] text-slate-900 font-semibold pt-1 border-t border-slate-200">
-              Action: 10–15 min post-meal brisk walk (blunts glucose spike by 35%) + track fasting insulin (target: &lt; 6 &mu;IU/mL).
-            </div>
-          </div>
-
-          <!-- 2. Mechanical Strain for K2 -->
-          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2">
-            <div class="font-bold text-blue-800 flex items-center gap-1.5">
-              <span>🦴 2. Mechanical Load Required for K2 Bioactivity</span>
-            </div>
-            <p class="text-slate-600 leading-relaxed">
-              You bought 45,000 mcg of K2 to carboxylate <strong>osteocalcin</strong>. However, osteocalcin only exerts its systemic metabolic and testosterone-stimulating actions when released into circulation by <strong>mechanical bone strain</strong> (axial loading from resistance training or walking). Without physical compression, osteoblast turnover is stagnant, blunt-ending K2's endocrine benefits.
-            </p>
-            <div class="text-[11px] text-slate-900 font-semibold pt-1 border-t border-slate-200">
-              Action: 2–3 weekly resistance training sessions (squats/deadlifts/presses) to activate the bone-muscle endocrine axis.
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -816,7 +995,6 @@
         const card = document.createElement('div');
         card.className = "sci-card sci-card-hover p-5 space-y-3";
 
-        // Generate tag badges with subtle colors
         const badges = s.tags.map(t => {
           const item = tagData[t] || { name: t, style: "bg-slate-100 text-slate-700 border-slate-200" };
           return `<span onclick="filterByTag('${t}')" class="cursor-pointer px-2 py-0.5 rounded-md text-[10px] font-mono-sci font-semibold border ${item.style} hover:opacity-80">${item.name}</span>`;
@@ -839,7 +1017,6 @@
             </a>
           </div>
 
-          <!-- Dosages Box with Subtle Neutral Coloration -->
           <div class="grid grid-cols-2 gap-2 p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-mono-sci">
             <div>
               <div class="text-[10px] text-emerald-800 font-sans font-semibold flex items-center gap-1">
@@ -855,7 +1032,6 @@
             </div>
           </div>
 
-          <!-- Best For & Why -->
           <div class="space-y-1.5 text-xs">
             <div>
               <span class="font-bold text-slate-900 font-sans">Best For:</span>
@@ -867,7 +1043,6 @@
             </div>
           </div>
 
-          <!-- Tags List -->
           <div class="pt-2.5 border-t border-slate-100 flex flex-wrap gap-1 items-center">
             <span class="text-[10px] text-slate-400 font-mono-sci mr-1">Improves:</span>
             ${badges}
@@ -882,7 +1057,6 @@
       document.querySelectorAll('#tagCloud button').forEach(b => {
         b.classList.remove('active-tag');
       });
-      // Highlight active button
       event?.target?.classList.add('active-tag');
       renderSupplementCards(tag);
     }
